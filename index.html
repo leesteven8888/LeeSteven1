@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>DA14585 E-Ink Web Tool</title>
+
+    <meta
+        name="description"
+        content="DA14585 E-Ink Watch Manager">
+
+    <meta
+        name="theme-color"
+        content="#10141d">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+
+    <link
+        rel="stylesheet"
+        href="css/style.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<!-- ===================================== -->
+
+<header>
+
+    <div class="logo">
+
+        <h1>
+
+            DA14585
+
+        </h1>
+
+        <span>
+
+            E-Ink Web Tool
+
+        </span>
+
+    </div>
+
+</header>
+
+<!-- ===================================== -->
+
+<section class="card">
+
+    <h2>
+
+        Device Information
+
+    </h2>
+
+    <div class="info-grid">
+
+        <div class="info-item">
+
+            <label>
+
+                Bluetooth Status
+
+            </label>
+
+            <span
+                id="status"
+                class="red">
+
+                Disconnected
+
+            </span>
+
+        </div>
+
+        <div class="info-item">
+
+            <label>
+
+                Device Name
+
+            </label>
+
+            <span
+                id="deviceName">
+
+                -
+
+            </span>
+
+        </div>
+
+        <div class="info-item">
+
+            <label>
+
+                Firmware
+
+            </label>
+
+            <span
+                id="firmwareVersion">
+
+                -
+
+            </span>
+
+        </div>
+
+        <div class="info-item">
+
+            <label>
+
+                Battery
+
+            </label>
+
+            <span
+                id="batteryVoltage">
+
+                -
+
+            </span>
+
+        </div>
+
+        <div class="info-item">
+
+            <label>
+
+                Device Time
+
+            </label>
+
+            <span
+                id="deviceTime">
+
+                -
+
+            </span>
+
+        </div>
+
+        <div class="info-item">
+
+            <label>
+
+                PC Time
+
+            </label>
+
+            <span
+                id="pcTime">
+
+                -
+
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ===================================== -->
+
+<section class="card">
+
+    <h2>
+
+        Bluetooth Control
+
+    </h2>
+
+    <div class="button-grid">
+
+        <button id="connectBtn">
+
+            🔵 Connect
+
+        </button>
+
+        <button
+            id="disconnectBtn"
+            disabled>
+
+            🔴 Disconnect
+
+        </button>
+
+        <button
+            id="syncBtn"
+            disabled>
+
+            ⏰ Sync Time
+
+        </button>
+
+        <button
+            id="calBtn"
+            disabled>
+
+            ⚙ Calibration
+
+        </button>
+
+    </div>
+
+</section><!-- ===================================== -->
+
+<section class="card">
+
+    <h2>
+
+        Firmware Update
+
+    </h2>
+
+    <div class="upload-box">
+
+        <label class="upload-label">
+
+            Select Firmware (.bin)
+
+        </label>
+
+        <input
+            type="file"
+            id="firmwareInput"
+            accept=".bin">
+
+        <div class="file-info">
+
+            <div>
+
+                <span class="title">
+
+                    File Name
+
+                </span>
+
+                <span id="firmwareName">
+
+                    -
+
+                </span>
+
+            </div>
+
+            <div>
+
+                <span class="title">
+
+                    File Size
+
+                </span>
+
+                <span id="firmwareSize">
+
+                    -
+
+                </span>
+
+            </div>
+
+            <div>
+
+                <span class="title">
+
+                    CRC32
+
+                </span>
+
+                <span id="firmwareCRC">
+
+                    -
+
+                </span>
+
+            </div>
+
+        </div>
+
+        <button
+            id="uploadFirmwareBtn"
+            disabled>
+
+            Upload Firmware
+
+        </button>
+
+    </div>
+
+</section>
+
+<!-- ===================================== -->
+
+<section class="card">
+
+    <h2>
+
+        Watch Face Manager
+
+    </h2>
+
+    <div class="upload-box">
+
+        <label class="upload-label">
+
+            Select Image
+
+        </label>
+
+        <input
+            type="file"
+            id="imageInput"
+            accept=".png,.jpg,.jpeg,.bmp">
+
+        <div class="preview-box">
+
+            <canvas
+                id="preview"
+                width="250"
+                height="122">
+
+            </canvas>
+
+        </div>
+
+        <div class="image-info">
+
+            <div>
+
+                <span class="title">
+
+                    Width
+
+                </span>
+
+                <span id="imgWidth">
+
+                    -
+
+                </span>
+
+            </div>
+
+            <div>
+
+                <span class="title">
+
+                    Height
+
+                </span>
+
+                <span id="imgHeight">
+
+                    -
+
+                </span>
+
+            </div>
+
+            <div>
+
+                <span class="title">
+
+                    Format
+
+                </span>
+
+                <span id="imgFormat">
+
+                    -
+
+                </span>
+
+            </div>
+
+        </div>
+
+        <button
+            id="uploadImageBtn"
+            disabled>
+
+            Upload Watch Face
+
+        </button>
+
+    </div>
+
+</section>
+
+<!-- ===================================== -->
+
+<section class="card">
+
+    <h2>
+
+        Transfer Progress
+
+    </h2>
+
+    <div class="progress">
+
+        <div
+            id="progressBar">
+
+        </div>
+
+    </div>
+
+    <div
+        id="progressText">
+
+        0%
+
+    </div>
+
+</section><!-- ===================================== -->
+
+<section class="card">
+
+    <h2>
+
+        BLE Log
+
+    </h2>
+
+    <div class="log-toolbar">
+
+        <button id="clearLog">
+
+            Clear Log
+
+        </button>
+
+        <button id="saveLog">
+
+            Save Log
+
+        </button>
+
+    </div>
+
+    <textarea
+
+        id="log"
+
+        readonly>
+
+Waiting for connection...
+
+    </textarea>
+
+</section>
+
+<!-- ===================================== -->
+
+<section class="card">
+
+    <h2>
+
+        Device Information
+
+    </h2>
+
+    <table class="device-table">
+
+        <tr>
+
+            <td>BLE Service</td>
+
+            <td id="serviceUUID">0xFF00</td>
+
+        </tr>
+
+        <tr>
+
+            <td>Control Characteristic</td>
+
+            <td id="ctrlUUID">0xFF03</td>
+
+        </tr>
+
+        <tr>
+
+            <td>ADC Characteristic</td>
+
+            <td id="adcUUID">0xFF02</td>
+
+        </tr>
+
+        <tr>
+
+            <td>Long Characteristic</td>
+
+            <td id="longUUID">0xFF01</td>
+
+        </tr>
+
+    </table>
+
+</section>
+
+<!-- ===================================== -->
+
+<section class="card">
+
+    <h2>
+
+        System Information
+
+    </h2>
+
+    <div class="system-box">
+
+        <p>
+
+            Browser :
+
+            <span id="browserName">
+
+                -
+
+            </span>
+
+        </p>
+
+        <p>
+
+            Platform :
+
+            <span id="platformName">
+
+                -
+
+            </span>
+
+        </p>
+
+        <p>
+
+            Bluetooth :
+
+            <span id="bleSupport">
+
+                Checking...
+
+            </span>
+
+        </p>
+
+    </div>
+
+</section>
+
+<!-- ===================================== -->
+
+<footer>
+
+    <div class="footer-title">
+
+        DA14585 E-Ink Web Tool
+
+    </div>
+
+    <div class="footer-version">
+
+        Version 1.0.0
+
+    </div>
+
+    <div class="footer-copy">
+
+        © 2026 LeeSteven
+
+    </div>
+
+</footer>
+
+</div>
+
+<!-- ===================================== -->
+
+<script src="js/crc32.js"></script>
+
+<script type="module" src="js/app.js"></script>
+
+</body>
+
+</html>
