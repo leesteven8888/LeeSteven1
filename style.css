@@ -1,0 +1,362 @@
+/* ==========================================
+   DA14585 E-Ink Web Tool
+   style.css
+========================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+
+    background:#10141d;
+
+    color:#ffffff;
+
+    font-family:'Roboto',sans-serif;
+
+    line-height:1.6;
+
+}
+
+.container{
+
+    max-width:1200px;
+
+    margin:auto;
+
+    padding:30px;
+
+}
+
+/* ==========================
+   Header
+========================== */
+
+header{
+
+    text-align:center;
+
+    margin-bottom:30px;
+
+}
+
+header h1{
+
+    font-size:38px;
+
+    font-weight:700;
+
+    color:#42a5f5;
+
+}
+
+.subtitle{
+
+    color:#b0bec5;
+
+    margin-top:10px;
+
+}
+
+/* ==========================
+   Card
+========================== */
+
+.card{
+
+    background:#1b2430;
+
+    border-radius:14px;
+
+    padding:25px;
+
+    margin-bottom:25px;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.35);
+
+}
+
+.card h2{
+
+    margin-bottom:20px;
+
+    color:#64b5f6;
+
+    font-size:22px;
+
+}
+
+/* ==========================
+   Info Grid
+========================== */
+
+.info-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+    gap:18px;
+
+}
+
+.item{
+
+    background:#273445;
+
+    border-radius:10px;
+
+    padding:18px;
+
+}
+
+.label{
+
+    display:block;
+
+    color:#90a4ae;
+
+    font-size:14px;
+
+    margin-bottom:6px;
+
+}
+
+.value{
+
+    font-size:18px;
+
+    font-weight:bold;
+
+}
+
+.red{
+
+    color:#ff5252;
+
+}
+
+.green{
+
+    color:#4caf50;
+
+}
+
+/* ==========================
+   Buttons
+========================== */
+
+.button-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+
+    gap:15px;
+
+}
+
+button{
+
+    border:none;
+
+    border-radius:10px;
+
+    padding:14px;
+
+    font-size:16px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+    background:#2196f3;
+
+    color:white;
+
+}
+
+button:hover{
+
+    background:#42a5f5;
+
+    transform:translateY(-2px);
+
+}
+
+button:disabled{
+
+    background:#555;
+
+    cursor:not-allowed;
+
+    transform:none;
+
+}
+
+/* ==========================
+   File
+========================== */
+
+input[type=file]{
+
+    width:100%;
+
+    padding:12px;
+
+    background:#273445;
+
+    border:1px solid #3c4d63;
+
+    color:white;
+
+    border-radius:8px;
+
+}
+
+/* ==========================
+   Canvas Preview
+========================== */
+
+#preview{
+
+    display:block;
+
+    margin:auto;
+
+    margin-top:15px;
+
+    margin-bottom:15px;
+
+    width:500px;
+
+    max-width:100%;
+
+    image-rendering:pixelated;
+
+    border:2px solid #3d4c63;
+
+    background:white;
+
+}
+
+/* ==========================
+   Progress
+========================== */
+
+.progress{
+
+    width:100%;
+
+    height:26px;
+
+    background:#2b3645;
+
+    border-radius:30px;
+
+    overflow:hidden;
+
+}
+
+#progressBar{
+
+    width:0%;
+
+    height:100%;
+
+    background:linear-gradient(90deg,#4caf50,#8bc34a);
+
+    transition:.3s;
+
+}
+
+#progressText{
+
+    text-align:center;
+
+    margin-top:10px;
+
+    font-size:18px;
+
+}
+
+/* ==========================
+   Log
+========================== */
+
+#log{
+
+    width:100%;
+
+    height:260px;
+
+    resize:none;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:#0e1622;
+
+    color:#00ff66;
+
+    padding:15px;
+
+    font-family:Consolas,monospace;
+
+    font-size:14px;
+
+}
+
+/* ==========================
+   Footer
+========================== */
+
+footer{
+
+    margin-top:30px;
+
+    text-align:center;
+
+    color:#90a4ae;
+
+    font-size:14px;
+
+}
+
+/* ==========================
+   Responsive
+========================== */
+
+@media(max-width:768px){
+
+    .container{
+
+        padding:15px;
+
+    }
+
+    header h1{
+
+        font-size:28px;
+
+    }
+
+    .button-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .info-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
