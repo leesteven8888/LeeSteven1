@@ -1305,8 +1305,6 @@ button.local-image-btn:hover {
     color: var(--md-sys-color-on-surface-variant);
 }
 
-/* ---- popup kích hoạt thiết bị (act-overlay) ---- */
-
 .act-overlay {
     position: fixed;
     inset: 0;
